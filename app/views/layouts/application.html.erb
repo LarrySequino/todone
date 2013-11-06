@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="/">ToDone</a>
+    <ul class="nav navbar-nav">
+        <li><%= link_to "Lists", lists_path %></li>
+    </ul>
+</nav>
 
-<%= yield %>
+<div class="container">
+    <% if flash[:info] %>
+        <div class='alert alert-info alert-dismissable'>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:info] %>
+        </div>
+    <% elsif flash[:error] %>
+        <div class='alert alert-danger alert-dismissable'>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:error] %>
+        </div>
+    <% end %>
+    <%= yield %>
+</div>
 
 </body>
 </html>

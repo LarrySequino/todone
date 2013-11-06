@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1.rc2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -47,3 +47,6 @@ end
 gem 'simple_form'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'rails_12factor'
+gem 'pg'
